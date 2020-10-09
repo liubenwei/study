@@ -20,6 +20,8 @@ public class Myagent {
 	public static void premain(String agentArgs,
 			Instrumentation instrumentation) {
 		System.out.println("hi! javaagent:" + agentArgs);
+		MyMonitorTransformer monitorTransformer = new MyMonitorTransformer();
+		instrumentation.addTransformer(monitorTransformer);
 	}
 
 	/**
