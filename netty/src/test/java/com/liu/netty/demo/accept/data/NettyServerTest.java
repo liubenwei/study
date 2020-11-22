@@ -5,10 +5,7 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import org.junit.Test;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.SocketAddress;
@@ -23,9 +20,36 @@ public class NettyServerTest {
             socket.connect(new InetSocketAddress("127.0.0.1" , 8088));
             InputStream inputStream = socket.getInputStream();
             OutputStream outputStream  = socket.getOutputStream();
-            outputStream.write("hello\n".getBytes());
+            outputStream.write("hello1\n".getBytes());
             outputStream.flush();
+            InputStream ips = socket.getInputStream();
+            InputStreamReader ipsr = new InputStreamReader(ips);
+            BufferedReader br = new BufferedReader(ipsr);
+            String s = "";
+            while((s = br.readLine()) != null)
+                System.out.println(s);
+            socket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
+    @Test
+    public void nettySendDataTest2(){
+        Socket socket = new Socket();
+        try {
+            socket.connect(new InetSocketAddress("127.0.0.1" , 8088));
+            InputStream inputStream = socket.getInputStream();
+            OutputStream outputStream  = socket.getOutputStream();
+            outputStream.write("hello2\n".getBytes());
+            outputStream.flush();
+            InputStream ips = socket.getInputStream();
+            InputStreamReader ipsr = new InputStreamReader(ips);
+            BufferedReader br = new BufferedReader(ipsr);
+            String s = "";
+            while((s = br.readLine()) != null)
+                System.out.println(s);
+            socket.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
