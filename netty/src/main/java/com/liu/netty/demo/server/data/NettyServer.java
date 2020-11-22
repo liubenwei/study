@@ -1,4 +1,4 @@
-package com.liu.netty.demo.acceptAndSend;
+package com.liu.netty.demo.server.data;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;

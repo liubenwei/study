@@ -1,4 +1,4 @@
-package com.liu.netty.demo.accept.data;
+package com.liu.netty.demo.server.data;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;

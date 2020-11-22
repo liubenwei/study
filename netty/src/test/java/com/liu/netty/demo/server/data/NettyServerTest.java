@@ -1,16 +1,10 @@
-package com.liu.netty.demo.accept.data;
+package com.liu.netty.demo.server.data;
 
-import io.netty.channel.ChannelFuture;
-import io.netty.channel.socket.SocketChannel;
-import io.netty.channel.socket.nio.NioSocketChannel;
 import org.junit.Test;
 
 import java.io.*;
 import java.net.InetSocketAddress;
 import java.net.Socket;
-import java.net.SocketAddress;
-
-import static org.junit.Assert.*;
 
 public class NettyServerTest {
     @Test

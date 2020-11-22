@@ -1,4 +1,4 @@
-package com.liu.netty.demo.acceptAndSend;
+package com.liu.netty.demo.server.acceptAndSend;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;

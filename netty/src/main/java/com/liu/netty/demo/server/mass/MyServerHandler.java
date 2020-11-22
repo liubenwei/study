@@ -1,7 +1,5 @@
-package com.liu.netty.demo.mass;
+package com.liu.netty.demo.server.mass;
 
-import io.netty.buffer.ByteBuf;
-import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.channel.socket.SocketChannel;
@@ -24,6 +22,7 @@ public class MyServerHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         String string = "接受的消息:" + msg + "\n";
+        log.info("服务器接收的消息：{}", msg);
         ChannelHandler.channels.writeAndFlush(string);
     }
 

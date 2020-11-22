@@ -1,4 +1,4 @@
-package com.liu.netty.demo.mass;
+package com.liu.netty.demo.server.stringdecode;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;

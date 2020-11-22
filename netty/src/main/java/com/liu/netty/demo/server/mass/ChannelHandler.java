@@ -1,4 +1,4 @@
-package com.liu.netty.demo.mass;
+package com.liu.netty.demo.server.mass;
 
 import io.netty.channel.group.ChannelGroup;
 import io.netty.channel.group.DefaultChannelGroup;
