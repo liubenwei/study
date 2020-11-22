@@ -14,7 +14,11 @@ public class NettyServerTest {
             socket.connect(new InetSocketAddress("127.0.0.1" , 8088));
             InputStream inputStream = socket.getInputStream();
             OutputStream outputStream  = socket.getOutputStream();
-            outputStream.write("hello1\n".getBytes());
+            outputStream.write("02 hello1\n03".getBytes());
+            outputStream.flush();
+            outputStream.write("0x02 hello1\n0x03".getBytes());
+            outputStream.flush();
+            outputStream.write("02 hello1\n03".getBytes());
             outputStream.flush();
             InputStream ips = socket.getInputStream();
             InputStreamReader ipsr = new InputStreamReader(ips);

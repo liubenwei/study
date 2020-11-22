@@ -19,7 +19,10 @@ public class MyClientHandler extends ChannelInboundHandlerAdapter {
         System.out.println("链接报告Port:" + socketChannel.localAddress().getPort());
         System.out.println("链接报告完毕");
         String string = "建立连接成功:" + socketChannel.localAddress().getHostString() + "\r\n";
-        ctx.writeAndFlush(string);
+        ctx.writeAndFlush("02 34 68 69 68 69 03");
+        ctx.writeAndFlush("02 34 68 69 68 69 ");
+        ctx.writeAndFlush("03 ");
+        ctx.writeAndFlush("02 34 68 69 68 69 03 02 34 68 69 68 69 03");
     }
 
     @Override
