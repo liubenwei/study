@@ -1,3 +1,4 @@
 # Project exclude paths
 /guava-study/.gradle/
 /juc/.gradle/
+/.idea/
