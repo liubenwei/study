@@ -52,4 +52,9 @@ public class NettyServerTest {
             e.printStackTrace();
         }
     }
+
+    @Test
+    public void hexToByte(){
+        System.out.println(0x02);
+    }
 }

@@ -13,6 +13,7 @@ import java.nio.charset.Charset;
 
 @Slf4j
 public class MyChannelInitializer extends ChannelInitializer<SocketChannel> {
+    @Override
     protected void initChannel(SocketChannel socketChannel) throws Exception {
         log.info("连接ip:{}", socketChannel.localAddress().getHostString());
         log.info("连接端口:{}", socketChannel.localAddress().getPort());
@@ -20,6 +21,8 @@ public class MyChannelInitializer extends ChannelInitializer<SocketChannel> {
 
         socketChannel.pipeline().addLast(new MyDeocder());
         socketChannel.pipeline().addLast(new MyEncoder());
+//        socketChannel.pipeline().addLast(new StringDecoder());
+//        socketChannel.pipeline().addLast(new StringEncoder());
         socketChannel.pipeline().addLast(new MyServerHandler());
     }
 }
