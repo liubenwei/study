@@ -6,7 +6,7 @@ import java.util.List;
  * @author liu
  * @Date 2020/12/14 19:35
  */
-public interface Session {
+public interface SqlSession {
 
     /**
      * 查询单条记录

@@ -5,6 +5,7 @@ import java.io.Closeable;
 /**
  * @author liu
  * @Date 2020/12/14 19:40
+ * 游标
  */
 public interface Cursor<T> extends Closeable, Iterable<T> {
 
