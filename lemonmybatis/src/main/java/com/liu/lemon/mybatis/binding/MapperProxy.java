@@ -25,14 +25,22 @@ public class MapperProxy<T> implements InvocationHandler, Serializable {
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         try {
             if (Object.class.equals(method.getDeclaringClass())) {
-
+                return method.invoke(this, args);
             }
+            return this.execute(method, args);
         } catch (Exception e) {
 
         }
         return null;
     }
 
+    /**
+     * 根据sql语句执行对应操作
+     *
+     * @param method 方法
+     * @param args   参数
+     * @return
+     */
     public Object execute(Method method, Object[] args) {
         String statementId = this.mapperInterface.getName() + "." + method.getName();
         return null;

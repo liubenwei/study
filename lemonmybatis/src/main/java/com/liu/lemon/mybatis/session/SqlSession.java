@@ -64,5 +64,12 @@ public interface SqlSession {
      * @return
      */
     int delete(String statement, Object parameter);
+
+    /**
+     * 获取配置类
+     *
+     * @return
+     */
+    Configuration getConfiguration();
 }
 
